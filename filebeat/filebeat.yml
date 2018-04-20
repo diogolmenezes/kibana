@@ -1,0 +1,11 @@
+filebeat.prospectors:
+
+- input_type: log
+  paths:
+   - /aplicacao/log/*.log
+  json.message_key: event
+  json.keys_under_root: true
+
+output.elasticsearch:
+  hosts: ["elasticsearch:9200"]
+  index: minhaoi-home-backend
